@@ -20,7 +20,7 @@ public class AboutFragment extends BaseHomeFragment{
 	@Override
 	protected int getLayoutId() {
 		// TODO Auto-generated method stub
-		return R.layout.fragment_about;
+		return R.layout.fragment_about_me;
 	}
 
 	@Override
