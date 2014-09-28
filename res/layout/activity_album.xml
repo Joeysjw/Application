@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+    <RelativeLayout
+        android:id="@+id/headView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/userinfo_navigationbar_background"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:text="相    册"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textview_title"
+            android:layout_alignBottom="@+id/textview_title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+         
+            android:text="发送"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+    -->
+
+    <include
+        android:id="@+id/headView"
+        layout="@layout/include_add_top_bar" />
+
+    <FrameLayout
+        android:id="@+id/first_part"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/headView" >
+
+        <GridView
+            android:id="@+id/myGrid"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#ffffff"
+            android:horizontalSpacing="4dp"
+            android:listSelector="@null"
+            android:numColumns="4"
+            android:padding="5dp"
+            android:verticalSpacing="4dp" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:background="#0fffffff"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/btn_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:background="@drawable/selector_logout"
+                android:text="预览(0/8)"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

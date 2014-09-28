@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navi_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_navi" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_navi_main"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_home"
+            android:drawablePadding="8dp"
+            android:text="@string/home"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_my_focus"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_feedback"
+            android:drawablePadding="8dp"
+            android:text="@string/my_focus"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_market"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_settings"
+            android:drawablePadding="8dp"
+            android:text="@string/second_hand"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_find_things"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_intro"
+            android:drawablePadding="8dp"
+            android:text="@string/find_lost_things"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_take_away"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_intro"
+            android:drawablePadding="8dp"
+            android:text="@string/take_away"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_settings"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_settings"
+            android:drawablePadding="8dp"
+            android:text="@string/setting"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tv_navi_about"
+            style="@style/navitext"
+            android:drawableLeft="@drawable/ic_navi_about"
+            android:drawablePadding="8dp"
+            android:text="@string/about_app"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>

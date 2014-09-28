@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">矿大圈儿</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="actionbar_activity_not_found">Failed to open intent&#8230;</string>
+    <string name="application_title">矿大圈儿</string>
+    <string name="pick_pics">选择照片</string>
+    <string name="settings_title">应用设置</string>
+    <string name="about_title">关于</string>
+
+    <string-array name="navigations">
+        <item>设置</item>
+        <item>反馈</item>
+        <item>推荐</item>
+        <item>关于</item>
+    </string-array>
+    <string-array name="interpolators">
+        <item>Accelerate</item>
+        <item>Linear</item>
+        <item>AccelerateDecelerate</item>
+        <item>Decelerate</item>
+    </string-array>
+
+    <!-- button -->
+    <string name="ok">确定</string>
+
+    <!-- navifragment -->
+    <string name="home">主页</string>
+    <string name="my_focus">我的关注</string>
+    <string name="second_hand">跳蚤市场</string>
+    <string name="find_lost_things">失物招领</string>
+    <string name="take_away">订外卖</string>
+    <string name="setting">设置</string>
+    <string name="about_app">关于</string>
+
+    <!-- AddFindLostThingsActivity -->
+    <string name="lost">Lost</string>
+    <string name="found">Found</string>
+    <string name="add_lost_things">添加</string>
+    <string name="message_search_hint">搜索&#8230;</string>
+    <string name="list_no_data_lost">暂时还未有失物信息</string>
+    <string name="list_no_data_found">暂时还未有招领信息</string>
+    <string name="title_hint">标题...</string>
+    <string name="describe_hint">描述...</string>
+    <string name="photo_hint">手机号...</string>
+
+    <!-- Aboutfragment -->
+    <string name="version">version 1.0</string>
+    <string name="copyright">support@bmob.cn</string>
+    <string name="programmer">攻城狮:施加卫(Joey)</string>
+    <string name="sign">中国梦，矿大梦！</string>
+
+    <!-- EditActivity -->
+    <string name="take_pic">拍照添加</string>
+    <string name="open_pic">添加图片</string>
+    
+    
+
+    <string name="progress_loading">正在加载,请稍后...</string>
+
+</resources>
