@@ -90,11 +90,13 @@ public class GetLostPicUriUtil {
 								if (lost.getPicForLost().getPic6() != null) {
 									picList.add(lost.getPicForLost().getPic8());
 								}
-								iGetPicListSuccess
-										.getPicPath(getPicUri(picList));
+//								iGetPicListSuccess
+//										.getPicPath(getPicUri(picList));
 							}
 
 						}
+						iGetPicListSuccess
+						.getPicPath(getPicUri(picList));
 					}
 
 					@Override

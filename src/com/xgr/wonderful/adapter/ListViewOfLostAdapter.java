@@ -23,9 +23,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,9 +55,6 @@ public class ListViewOfLostAdapter extends BaseContentAdapter<Lost> {
 	private Context context;
 	
 	private ArrayList<String> picPath = new ArrayList<String>();
-	
-	private IGetPicListSuccess iGetPicListSuccess;
-	
 
 	public ListViewOfLostAdapter(Context context, List<Lost> list) {
 		super(context, list);
@@ -76,7 +70,7 @@ public class ListViewOfLostAdapter extends BaseContentAdapter<Lost> {
 			convertView = mInflater.inflate(R.layout.lost_listview_item, null);
 			viewHolder.userName = (TextView) convertView
 					.findViewById(R.id.lost_user_name);
-			viewHolder.userLogo = (ImageView) convertView
+			viewHolder.userLogo = (ImageView) convertView 
 					.findViewById(R.id.lost_user_logo);
 			viewHolder.date = (TextView) convertView
 					.findViewById(R.id.lost_item_date);
@@ -128,16 +122,12 @@ public class ListViewOfLostAdapter extends BaseContentAdapter<Lost> {
 		viewHolder.date.setText(entity.getDate());
 
 		viewHolder.contentText.setText(entity.getDescribe());
-		
-		GetLostPicUriUtil getLostPicUriUtil = new GetLostPicUriUtil(mContext, entity);
-		
+		GetLostPicUriUtil getLostPicUriUtil = new GetLostPicUriUtil(mContext, entity);		
 		getLostPicUriUtil.getPicUriList();
 		getLostPicUriUtil.setIGetPicListSuccessListener(new IGetPicListSuccess() {
 			
 			@Override
 			public void getPicPath(ArrayList<String> list) {		
-				Log.w("list.size...................", ""+list.size());
-				
 				if(list==null || list.size()<1){
 					viewHolder.content_image.setVisibility(View.GONE);
 				}else{
