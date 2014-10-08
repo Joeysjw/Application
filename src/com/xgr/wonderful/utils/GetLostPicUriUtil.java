@@ -63,7 +63,6 @@ public class GetLostPicUriUtil {
 						if (lost == null) {
 							return;
 						} else {
-							// picList = new ArrayList<BmobFile>();
 							if (lost.getPicForLost() != null) {
 								picList.clear();
 								if (lost.getPicForLost().getPic1() != null) {
@@ -84,14 +83,12 @@ public class GetLostPicUriUtil {
 								if (lost.getPicForLost().getPic6() != null) {
 									picList.add(lost.getPicForLost().getPic6());
 								}
-								if (lost.getPicForLost().getPic6() != null) {
+								if (lost.getPicForLost().getPic7() != null) {
 									picList.add(lost.getPicForLost().getPic7());
 								}
-								if (lost.getPicForLost().getPic6() != null) {
+								if (lost.getPicForLost().getPic8() != null) {
 									picList.add(lost.getPicForLost().getPic8());
 								}
-//								iGetPicListSuccess
-//										.getPicPath(getPicUri(picList));
 							}
 
 						}
