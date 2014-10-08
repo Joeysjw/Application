@@ -75,6 +75,7 @@ public class CommentOfLostActivity extends BasePageActivity implements OnClickLi
 	
 	private TextView userName;
 	private TextView commentItemContent;
+	private TextView date;
 	private MyGridView commentItemImage;
 	
 	private ImageView userLogo;
@@ -110,6 +111,7 @@ public class CommentOfLostActivity extends BasePageActivity implements OnClickLi
 		commentCommit = (Button)findViewById(R.id.comment_commit);
 		
 		userName = (TextView)findViewById(R.id.lost_user_name);
+		date = (TextView) findViewById(R.id.lost_item_date);
 		commentItemContent = (TextView)findViewById(R.id.lost_content_text);
 		commentItemImage = (MyGridView)findViewById(R.id.lost_content_image);
 		
@@ -177,6 +179,7 @@ public class CommentOfLostActivity extends BasePageActivity implements OnClickLi
 	
 		
 		userName.setText(lost.getAuthor().getUsername());	
+		date.setText(lost.getDate());
 		commentItemContent.setText(lost.getDescribe());
 		if(null == lost.getPicForLost()){
 			commentItemImage.setVisibility(View.GONE);
