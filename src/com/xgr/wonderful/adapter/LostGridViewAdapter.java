@@ -31,6 +31,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
+import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.R;
 import com.xgr.wonderful.ui.CheckImageActivity;
 
@@ -52,7 +53,6 @@ public class LostGridViewAdapter extends BaseAdapter{
 
 	@Override
 	public int getCount() {
-		Log.w("picList.size is ", ""+picList.size());
 		return picList.size();
 	}
 
@@ -98,18 +98,18 @@ public class LostGridViewAdapter extends BaseAdapter{
 				
 			}
 		});
-		DisplayImageOptions options = new DisplayImageOptions.Builder()  
-         .showStubImage(R.drawable.bg_pic_loading)  
-         .showImageForEmptyUri(R.drawable.bg_pic_loading)  
-         .showImageOnFail(R.drawable.bg_pic_loading)
-         .resetViewBeforeLoading(true)
-         .cacheInMemory(true)  
-         .cacheOnDisc(true)
-         .imageScaleType(ImageScaleType.EXACTLY)
-         .bitmapConfig(Bitmap.Config.RGB_565)     //设置图片的解码类型  
-         .build(); 
+//		DisplayImageOptions options = new DisplayImageOptions.Builder()  
+//         .showStubImage(R.drawable.bg_pic_loading)  
+//         .showImageForEmptyUri(R.drawable.bg_pic_loading)  
+//         .showImageOnFail(R.drawable.bg_pic_loading)
+//         .resetViewBeforeLoading(true)
+//         .cacheInMemory(true)  
+//         .cacheOnDisc(true)
+//         .imageScaleType(ImageScaleType.EXACTLY)
+//         .bitmapConfig(Bitmap.Config.RGB_565)     //设置图片的解码类型  
+//         .build(); 
 		if(bmobFile.equals(viewHolder.imageView.getTag())){
-			ImageLoader.getInstance().displayImage(bmobFile==null?"":bmobFile, viewHolder.imageView, options);
+			ImageLoader.getInstance().displayImage(bmobFile==null?"":bmobFile, viewHolder.imageView, MyApplication.getInstance().getOptions(R.drawable.bg_pic_loading));
 		}
 		
 		return 	convertView;
