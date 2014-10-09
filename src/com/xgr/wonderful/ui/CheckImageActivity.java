@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 
 import com.bmob.lostfound.BaseActivity;
@@ -39,14 +41,15 @@ public class CheckImageActivity extends BaseActivity {
 	@Override
 	public void initListeners() {
 //		// TODO Auto-generated method stub
-//		viewImage.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0) {
-//				// TODO Auto-generated method stub
-//			finish();	
-//			}
-//		});
+		viewImage.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				finish();
+				
+			}
+		});
 	}
 
 
