@@ -461,7 +461,7 @@ public class SettingsFragment extends BaseHomeFragment implements OnClickListene
 					if(mIProgressControllor!=null){
 						mIProgressControllor.hideActionBarProgress();
 					}
-					LogUtils.i(TAG, "上传文件成功。"+file.getFileUrl());
+					LogUtils.i(TAG, "上传文件成功。"+file.getFileUrl(mContext));
 					User currentUser = BmobUser.getCurrentUser(mContext, User.class);
 					currentUser.setAvatar(file);
 					if(mIProgressControllor!=null){
@@ -567,7 +567,7 @@ public class SettingsFragment extends BaseHomeFragment implements OnClickListene
 			BmobFile avatarFile = user.getAvatar();
 			if(null != avatarFile){
 				ImageLoader.getInstance()
-				.displayImage(avatarFile.getFileUrl(), userIcon, 
+				.displayImage(avatarFile.getFileUrl(mContext), userIcon, 
 						MyApplication.getInstance().getOptions(R.drawable.user_icon_default_main),
 						new SimpleImageLoadingListener(){
 							@Override

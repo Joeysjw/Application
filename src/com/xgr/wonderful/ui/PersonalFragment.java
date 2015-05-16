@@ -170,7 +170,7 @@ public class PersonalFragment extends BaseHomeFragment implements OnClickListene
 		personalSign.setText(user.getSignature());
 		if(user.getAvatar() != null){
 			ImageLoader.getInstance()
-			.displayImage(user.getAvatar().getFileUrl(), personalIcon, 
+			.displayImage(user.getAvatar().getFileUrl(mContext), personalIcon, 
 					MyApplication.getInstance().getOptions(R.drawable.content_image_default),
 					new SimpleImageLoadingListener(){
 	

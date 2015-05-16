@@ -204,13 +204,13 @@ public class EditActivity extends BasePageActivity implements OnClickListener{
 	 */
 	private void publish(final String commitContent){
 		
-		final BmobFile figureFile = new BmobFile(QiangYu.class, new File(targeturl));
+		final BmobFile figureFile = new BmobFile( new File(targeturl));
 		figureFile.upload(mContext, new UploadFileListener() {
 			
 			@Override
 			public void onSuccess() {
 				// TODO Auto-generated method stub
-				LogUtils.i(TAG, "上传文件成功。"+figureFile.getFileUrl());	
+				LogUtils.i(TAG, "上传文件成功。"+figureFile.getFileUrl(mContext));	
 				publishWithoutFigure(commitContent, figureFile);
 				
 			}

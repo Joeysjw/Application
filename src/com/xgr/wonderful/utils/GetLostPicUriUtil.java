@@ -29,7 +29,7 @@ public class GetLostPicUriUtil {
 	}
 
 	private BmobObject entity;
-	private Context mConetxt;
+	private Context mContext;
 
 	private IGetPicListSuccess iGetPicListSuccess;
 
@@ -42,7 +42,7 @@ public class GetLostPicUriUtil {
 
 	public GetLostPicUriUtil(Context mContext, BmobObject entity) {
 		super();
-		this.mConetxt = mContext;
+		this.mContext = mContext;
 		this.entity = entity;
 	}
 
@@ -54,7 +54,7 @@ public class GetLostPicUriUtil {
 	public void getPicUriList() {
 		BmobQuery<Lost> query = new BmobQuery<Lost>();
 		query.include("picForLost");
-		query.getObject(mConetxt, entity.getObjectId(),
+		query.getObject(mContext, entity.getObjectId(),
 				new GetListener<Lost>() {
 
 					@Override
@@ -108,7 +108,7 @@ public class GetLostPicUriUtil {
 		ArrayList<String> picUri = new ArrayList<String>();
 		picUri.clear();
 		for (BmobFile p : list) {
-			picUri.add(p.getFileUrl());
+			picUri.add(p.getFileUrl(mContext));
 		}
 		return picUri;
 	}

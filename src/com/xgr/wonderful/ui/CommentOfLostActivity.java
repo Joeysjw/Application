@@ -216,7 +216,7 @@ public class CommentOfLostActivity extends BasePageActivity implements OnClickLi
 		BmobFile avatar = user.getAvatar();
 		if(null != avatar){
 			ImageLoader.getInstance()
-			.displayImage(avatar.getFileUrl(), userLogo, 
+			.displayImage(avatar.getFileUrl(mContext), userLogo, 
 					MyApplication.getInstance().getOptions(R.drawable.content_image_default),
 					new SimpleImageLoadingListener(){
 	

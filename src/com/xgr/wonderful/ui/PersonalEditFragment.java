@@ -107,7 +107,7 @@ public class PersonalEditFragment extends BaseHomeFragment implements OnClickLis
 		BmobFile avatarFile = currentUser.getAvatar();
 		if(null != avatarFile){
 			ImageLoader.getInstance()
-			.displayImage(avatarFile.getFileUrl(), userIcon, 
+			.displayImage(avatarFile.getFileUrl(mContext), userIcon, 
 					MyApplication.getInstance().getOptions(R.drawable.ic_launcher),
 					new SimpleImageLoadingListener(){
 
@@ -185,7 +185,7 @@ public class PersonalEditFragment extends BaseHomeFragment implements OnClickLis
 				@Override
 				public void onSuccess() {
 					// TODO Auto-generated method stub
-					LogUtils.i(TAG, "上传文件成功。"+file.getFileUrl());
+					LogUtils.i(TAG, "上传文件成功。"+file.getFileUrl(mContext));
 					currentUser.setAvatar(file);
 					if(!TextUtils.isEmpty(signatureEdit.getText().toString().trim())){
 						currentUser.setSignature(signatureEdit.getText().toString().trim());
@@ -198,7 +198,7 @@ public class PersonalEditFragment extends BaseHomeFragment implements OnClickLis
 							// TODO Auto-generated method stub
 							ActivityUtil.show(getActivity(), "更新信息成功。");
 							currentUser = BmobUser.getCurrentUser(getActivity(),User.class);
-							LogUtils.i(TAG,"new url:"+BmobUser.getCurrentUser(getActivity(),User.class).getAvatar().getFileUrl());
+							LogUtils.i(TAG,"new url:"+BmobUser.getCurrentUser(getActivity(),User.class).getAvatar().getFileUrl(mContext));
 							getActivity().setResult(Activity.RESULT_OK);
 							getActivity().finish();
 						}

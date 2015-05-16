@@ -100,7 +100,7 @@ public class ListViewOfLostAdapter extends BaseContentAdapter<Lost> {
 		}
 		String avatarUrl = null;
 		if (user.getAvatar() != null) {
-			avatarUrl = user.getAvatar().getFileUrl();
+			avatarUrl = user.getAvatar().getFileUrl(mContext);
 		}
 		ImageLoader.getInstance().displayImage(
 				avatarUrl,

@@ -85,7 +85,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 		}
 		String avatarUrl = null;
 		if(user.getAvatar()!=null){
-			avatarUrl = user.getAvatar().getFileUrl();
+			avatarUrl = user.getAvatar().getFileUrl(mContext);
 		}
 		ImageLoader.getInstance()
 		.displayImage(avatarUrl, viewHolder.userLogo, 
@@ -126,7 +126,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 		}else{
 			viewHolder.contentImage.setVisibility(View.VISIBLE);
 			ImageLoader.getInstance()
-			.displayImage(entity.getContentfigureurl().getFileUrl()==null?"":entity.getContentfigureurl().getFileUrl(), viewHolder.contentImage, 
+			.displayImage(entity.getContentfigureurl().getFileUrl(mContext)==null?"":entity.getContentfigureurl().getFileUrl(mContext), viewHolder.contentImage, 
 					MyApplication.getInstance().getOptions(R.drawable.bg_pic_loading),
 					new SimpleImageLoadingListener(){
 	
@@ -253,7 +253,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 	        String comment="来领略最美的风景吧";
 	        String img= null;
 	        if(qy.getContentfigureurl()!=null){
-	        	img = qy.getContentfigureurl().getFileUrl();
+	        	img = qy.getContentfigureurl().getFileUrl(mContext);
 	        }else{
 	        	img = "http://www.codenow.cn/appwebsite/website/yyquan/uploads/53af6851d5d72.png";
 	        }

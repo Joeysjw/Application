@@ -174,7 +174,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 		}else{
 			commentItemImage.setVisibility(View.VISIBLE);
 			ImageLoader.getInstance()
-			.displayImage(qiangYu.getContentfigureurl().getFileUrl()==null?"":qiangYu.getContentfigureurl().getFileUrl(), commentItemImage, 
+			.displayImage(qiangYu.getContentfigureurl().getFileUrl(mContext)==null?"":qiangYu.getContentfigureurl().getFileUrl(mContext), commentItemImage, 
 					MyApplication.getInstance().getOptions(R.drawable.bg_pic_loading),
 					new SimpleImageLoadingListener(){
 	
@@ -211,7 +211,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 		BmobFile avatar = user.getAvatar();
 		if(null != avatar){
 			ImageLoader.getInstance()
-			.displayImage(avatar.getFileUrl(), userLogo, 
+			.displayImage(avatar.getFileUrl(mContext), userLogo, 
 					MyApplication.getInstance().getOptions(R.drawable.content_image_default),
 					new SimpleImageLoadingListener(){
 	
@@ -564,7 +564,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 	        String comment="来领略最美的风景吧";
 	        String img= null;
 	        if(qy.getContentfigureurl()!=null){
-	        	img = qy.getContentfigureurl().getFileUrl();
+	        	img = qy.getContentfigureurl().getFileUrl(mContext);
 	        }else{
 	        	img = "http://www.codenow.cn/appwebsite/website/yyquan/uploads/53af6851d5d72.png";
 	        }
