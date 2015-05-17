@@ -434,12 +434,7 @@ public class AddFindLostActivity extends BaseActivity implements OnClickListener
 			intent.putExtra(MyConst.POSITION, position);
 			intent.putStringArrayListExtra(MyConst.SELECTED_PICS_PATH, selectedPicList);			
 			startActivityForResult(intent, MyConst.GET_PICS);
-			for(String p:dataList){
-				Log.w("dataList p........", ""+p);
-			}
-			for(String p:selectedPicList){
-				Log.w(" selectedPicList p........", ""+p);
-			}
+	
 		}
 
 	}

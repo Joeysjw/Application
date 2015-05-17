@@ -102,7 +102,6 @@ public class FindLostThingsFragment extends BaseHomeFragment implements OnClickL
 	                 LogUtils.i(TAG,"username:"+name+",email:"+email);
 	                 Intent intent = new Intent();
 	                 intent.setClass(mContext, AddFindLostActivity.class);
-	                 Log.w("I am here", "111111");
 	                 startActivity(intent);
 	             } else {
 	                 // 缓存用户对象为空时， 可打开用户注册界面…

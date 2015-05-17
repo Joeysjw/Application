@@ -288,6 +288,7 @@ public class EditActivity extends BasePageActivity implements OnClickListener{
 					}
 					Bitmap bitmap = compressImageFromFile(fileName);
 					targeturl = saveToSdCard(bitmap);
+					Log.w("joey", "return url is"+targeturl);
 					albumPic.setBackgroundDrawable(new BitmapDrawable(bitmap));
 					takeLayout.setVisibility(View.GONE);
 				}
@@ -341,9 +342,7 @@ public class EditActivity extends BasePageActivity implements OnClickListener{
 	}
 	
 	public String saveToSdCard(Bitmap bitmap){
-		String files =CacheUtils.getCacheDirectory(mContext, true, "pic") + dateTime+"_11";
-		
-		File file=new File(files);
+		File file=new File(CacheUtils.getCacheDirectory(mContext, true, "pic") ,dateTime+".jpg");
         try {
             FileOutputStream out=new FileOutputStream(file);
             if(bitmap.compress(Bitmap.CompressFormat.JPEG, 50, out)){

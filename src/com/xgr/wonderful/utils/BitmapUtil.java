@@ -155,8 +155,7 @@ public class BitmapUtil {
 	public static String saveToSdCard(Context mContext, Bitmap bitmap){
 		Date date1 = new Date(System.currentTimeMillis());
 		String dateTime = date1.getTime() + "";
-		String files =CacheUtils.getCacheDirectory(mContext, true, "lost") + dateTime+"_14";
-		File file = new File(files);
+		File file = new File(CacheUtils.getCacheDirectory(mContext, true, "lost"),dateTime+"_L.jpg");
         try {
             FileOutputStream out=new FileOutputStream(file);     
             if(bitmap.compress(Bitmap.CompressFormat.JPEG, 55, out)){
