@@ -31,7 +31,7 @@ import com.xgr.wonderful.R;
 import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.adapter.AIContentAdapter;
 import com.xgr.wonderful.adapter.PersonCenterContentAdapter;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.ui.base.BaseHomeFragment;
 import com.xgr.wonderful.utils.ActivityUtil;
@@ -50,7 +50,7 @@ public class PersonalFragment extends BaseHomeFragment implements OnClickListene
 	private PullToRefreshListView mPullToRefreshListView;
 	private ListView mListView;
 	
-	private ArrayList<QiangYu> mQiangYus;
+	private ArrayList<MainPageItem> mQiangYus;
 	private PersonCenterContentAdapter mAdapter;
 	
 	private User mUser ;
@@ -147,7 +147,7 @@ public class PersonalFragment extends BaseHomeFragment implements OnClickListene
 			}
 		});
 		mListView = mPullToRefreshListView.getRefreshableView();
-		mQiangYus = new ArrayList<QiangYu>();
+		mQiangYus = new ArrayList<MainPageItem>();
 		mAdapter = new PersonCenterContentAdapter(mContext, mQiangYus);
 		mListView.setAdapter(mAdapter);
 		mListView.setOnItemClickListener(new OnItemClickListener() {
@@ -217,16 +217,16 @@ public class PersonalFragment extends BaseHomeFragment implements OnClickListene
 
 	private void getPublishion() {
 		mIProgressControllor.showActionBarProgress();
-		BmobQuery<QiangYu> query = new BmobQuery<QiangYu>();
+		BmobQuery<MainPageItem> query = new BmobQuery<MainPageItem>();
 		query.setLimit(Constant.NUMBERS_PER_PAGE);
 		query.setSkip(Constant.NUMBERS_PER_PAGE*(pageNum++));
 		query.order("-createdAt");
 		query.include("author");
 		query.addWhereEqualTo("author", mUser);
-		query.findObjects(mContext, new FindListener<QiangYu>() {
+		query.findObjects(mContext, new FindListener<MainPageItem>() {
 			
 			@Override
-			public void onSuccess(List<QiangYu> data) {
+			public void onSuccess(List<MainPageItem> data) {
 				// TODO Auto-generated method stub
 				mIProgressControllor.hideActionBarProgress();
 				if(data.size()!=0&&data.get(data.size()-1)!=null){

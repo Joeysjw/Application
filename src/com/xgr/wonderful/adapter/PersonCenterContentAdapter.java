@@ -25,7 +25,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.xgr.wonderful.R;
 import com.xgr.wonderful.MyApplication;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.sns.TencentShare;
 import com.xgr.wonderful.sns.TencentShareEntity;
@@ -44,12 +44,12 @@ import com.xgr.wonderful.utils.LogUtils;
  * TODO
  */
 
-public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
+public class PersonCenterContentAdapter extends BaseContentAdapter<MainPageItem>{
 	
 	public static final String TAG = "AIContentAdapter";
 	public static final int SAVE_FAVOURITE = 2;
 
-	public PersonCenterContentAdapter(Context context, List<QiangYu> list) {
+	public PersonCenterContentAdapter(Context context, List<MainPageItem> list) {
 		super(context, list);
 		// TODO Auto-generated constructor stub
 	}
@@ -74,7 +74,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 		}else{
 			viewHolder = (ViewHolder)convertView.getTag();
 		}
-		final QiangYu entity = dataList.get(position);
+		final MainPageItem entity = dataList.get(position);
 		LogUtils.i("user",entity.toString());
 		User user = entity.getAuthor();
 		if(user == null){
@@ -248,7 +248,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 		return convertView;
 	}
 	
-	 private TencentShareEntity getQQShareEntity(QiangYu qy) {
+	 private TencentShareEntity getQQShareEntity(MainPageItem qy) {
 	        String title= "这里好多美丽的风景";
 	        String comment="来领略最美的风景吧";
 	        String img= null;
@@ -278,7 +278,7 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 		public TextView comment;
 	}
 	
-	private void onClickFav(View v,QiangYu qiangYu) {
+	private void onClickFav(View v,MainPageItem qiangYu) {
 		// TODO Auto-generated method stub
 		User user = BmobUser.getCurrentUser(mContext, User.class);
 		if(user != null && user.getSessionToken()!=null){
@@ -325,15 +325,15 @@ public class PersonCenterContentAdapter extends BaseContentAdapter<QiangYu>{
 	private void getMyFavourite(){
 		User user = BmobUser.getCurrentUser(mContext, User.class);
 		if(user!=null){
-			BmobQuery<QiangYu> query = new BmobQuery<QiangYu>();
+			BmobQuery<MainPageItem> query = new BmobQuery<MainPageItem>();
 			query.addWhereRelatedTo("favorite", new BmobPointer(user));
 			query.include("user");
 			query.order("createdAt");
 			query.setLimit(Constant.NUMBERS_PER_PAGE);
-			query.findObjects(mContext, new FindListener<QiangYu>() {
+			query.findObjects(mContext, new FindListener<MainPageItem>() {
 				
 				@Override
-				public void onSuccess(List<QiangYu> data) {
+				public void onSuccess(List<MainPageItem> data) {
 					// TODO Auto-generated method stub
 					LogUtils.i(TAG,"get fav success!"+data.size());
 					ActivityUtil.show(mContext, "fav size:"+data.size());

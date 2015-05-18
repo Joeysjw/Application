@@ -48,7 +48,7 @@ import com.xgr.wonderful.adapter.AIContentAdapter;
 import com.xgr.wonderful.adapter.ListViewOfLostAdapter;
 import com.xgr.wonderful.adapter.LostContentAdapter;
 import com.xgr.wonderful.db.DatabaseUtil;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.ui.QiangContentFragment.RefreshType;
 import com.xgr.wonderful.ui.base.BaseFragment;
 import com.xgr.wonderful.utils.ActivityUtil;

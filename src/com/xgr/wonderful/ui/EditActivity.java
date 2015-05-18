@@ -37,7 +37,7 @@ import cn.bmob.v3.listener.UploadFileListener;
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.xgr.wonderful.R;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.ui.base.BasePageActivity;
 import com.xgr.wonderful.utils.ActivityUtil;
@@ -234,7 +234,7 @@ public class EditActivity extends BasePageActivity implements OnClickListener{
 			final BmobFile figureFile) {
 		User user = BmobUser.getCurrentUser(mContext, User.class);
 
-		final QiangYu qiangYu = new QiangYu();
+		final MainPageItem qiangYu = new MainPageItem();
 		qiangYu.setAuthor(user);
 		qiangYu.setContent(commitContent);
 		if(figureFile!=null){

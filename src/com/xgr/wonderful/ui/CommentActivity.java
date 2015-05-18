@@ -42,7 +42,7 @@ import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.adapter.CommentAdapter;
 import com.xgr.wonderful.db.DatabaseUtil;
 import com.xgr.wonderful.entity.Comment;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.sns.TencentShare;
 import com.xgr.wonderful.sns.TencentShareEntity;
@@ -77,7 +77,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 	private TextView love;
 	private TextView hate;
 	
-	private QiangYu qiangYu;
+	private MainPageItem qiangYu;
 	private String commentEdit = "";
 	
 	private CommentAdapter mAdapter;
@@ -120,7 +120,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 		// TODO Auto-generated method stub
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE |
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-		qiangYu = (QiangYu)getIntent().getSerializableExtra("data");//MyApplication.getInstance().getCurrentQiangYu();
+		qiangYu = (MainPageItem)getIntent().getSerializableExtra("data");//MyApplication.getInstance().getCurrentQiangYu();
 		pageNum = 0;
 		
 		
@@ -162,7 +162,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 		initMoodView(qiangYu);
 	}
 
-	private void initMoodView(QiangYu mood2) {
+	private void initMoodView(MainPageItem mood2) {
 		// TODO Auto-generated method stub
 		if(mood2 == null){
 			return;
@@ -459,15 +459,15 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 	private void getMyFavourite(){
 		User user = BmobUser.getCurrentUser(this, User.class);
 		if(user!=null){
-			BmobQuery<QiangYu> query = new BmobQuery<QiangYu>();
+			BmobQuery<MainPageItem> query = new BmobQuery<MainPageItem>();
 			query.addWhereRelatedTo("favorite", new BmobPointer(user));
 			query.include("user");
 			query.order("createdAt");
 			query.setLimit(Constant.NUMBERS_PER_PAGE);
-			query.findObjects(this, new FindListener<QiangYu>() {
+			query.findObjects(this, new FindListener<MainPageItem>() {
 				
 				@Override
-				public void onSuccess(List<QiangYu> data) {
+				public void onSuccess(List<MainPageItem> data) {
 					// TODO Auto-generated method stub
 					LogUtils.i(TAG,"get fav success!"+data.size());
 					ActivityUtil.show(CommentActivity.this, "fav size:"+data.size());
@@ -559,7 +559,7 @@ public class CommentActivity extends BasePageActivity implements OnClickListener
 		tencentShare.shareToQQ();
 	}
 
-	 private TencentShareEntity getQQShareEntity(QiangYu qy) {
+	 private TencentShareEntity getQQShareEntity(MainPageItem qy) {
 	        String title= "这里好多美丽的风景";
 	        String comment="来领略最美的风景吧";
 	        String img= null;

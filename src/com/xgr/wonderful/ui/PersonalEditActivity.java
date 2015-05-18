@@ -2,7 +2,7 @@ package com.xgr.wonderful.ui;
 
 import android.os.Bundle;
 
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.ui.base.BaseFragment;
 import com.xgr.wonderful.ui.base.BaseHomeActivity;
 import com.xgr.wonderful.utils.ActivityUtil;

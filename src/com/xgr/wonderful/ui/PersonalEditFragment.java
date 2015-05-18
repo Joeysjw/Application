@@ -42,7 +42,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.xgr.wonderful.R;
 import com.xgr.wonderful.MyApplication;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.ui.base.BaseHomeFragment;
 import com.xgr.wonderful.utils.ActivityUtil;

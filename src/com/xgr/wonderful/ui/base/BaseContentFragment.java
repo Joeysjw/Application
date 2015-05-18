@@ -29,7 +29,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleLis
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
 import com.xgr.wonderful.R;
 import com.xgr.wonderful.adapter.BaseContentAdapter;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.ui.QiangContentFragment.RefreshType;
 import com.xgr.wonderful.utils.ActivityUtil;
@@ -42,9 +42,9 @@ public abstract class BaseContentFragment extends BaseFragment{
 	private String lastItemTime;
 	
 	private View contentView;
-	protected ArrayList<QiangYu> mListItems;
+	protected ArrayList<MainPageItem> mListItems;
 	private PullToRefreshListView mPullRefreshListView;
-	private BaseContentAdapter<QiangYu> mAdapter;
+	private BaseContentAdapter<MainPageItem> mAdapter;
 	private ListView actualListView;
 	
 	private TextView networkTips;
@@ -111,7 +111,7 @@ public abstract class BaseContentFragment extends BaseFragment{
 		});
 		
 		actualListView = mPullRefreshListView.getRefreshableView();
-		mListItems = new ArrayList<QiangYu>();
+		mListItems = new ArrayList<MainPageItem>();
 		mAdapter = getAdapter();
 		actualListView.setAdapter(mAdapter);
 		
@@ -133,7 +133,7 @@ public abstract class BaseContentFragment extends BaseFragment{
 	public void fetchData(){
 		setState(LOADING);
 		User user = BmobUser.getCurrentUser(mContext, User.class);
-		BmobQuery<QiangYu> query = new BmobQuery<QiangYu>();
+		BmobQuery<MainPageItem> query = new BmobQuery<MainPageItem>();
 		query.addWhereRelatedTo("favorite", new BmobPointer(user));
 		query.order("-createdAt");
 		query.setLimit(Constant.NUMBERS_PER_PAGE);
@@ -141,10 +141,10 @@ public abstract class BaseContentFragment extends BaseFragment{
 		query.addWhereLessThan("createdAt", date);
 		query.setSkip(Constant.NUMBERS_PER_PAGE*(pageNum++));
 		query.include("author");
-		query.findObjects(getActivity(), new FindListener<QiangYu>() {
+		query.findObjects(getActivity(), new FindListener<MainPageItem>() {
 			
 			@Override
-			public void onSuccess(List<QiangYu> list) {
+			public void onSuccess(List<MainPageItem> list) {
 				// TODO Auto-generated method stub
 				LogUtils.i(TAG,"find success."+list.size());
 				if(list.size()!=0&&list.get(list.size()-1)!=null){
@@ -228,6 +228,6 @@ public abstract class BaseContentFragment extends BaseFragment{
 		}
 	}
 	
-	public abstract BaseContentAdapter<QiangYu> getAdapter();
+	public abstract BaseContentAdapter<MainPageItem> getAdapter();
 	public abstract void onListItemClick(AdapterView<?> parent, View view,int position, long id);
 }

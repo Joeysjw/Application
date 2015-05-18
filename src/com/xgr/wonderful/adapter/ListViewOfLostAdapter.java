@@ -38,7 +38,7 @@ import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.R;
 import com.xgr.wonderful.adapter.AIContentAdapter.ViewHolder;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.sns.TencentShare;
 import com.xgr.wonderful.sns.TencentShareEntity;

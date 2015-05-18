@@ -6,10 +6,10 @@ import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.datatype.BmobRelation;
 
-public class QiangYu extends BmobObject implements Serializable{
+public class MainPageItem extends BmobObject implements Serializable{
 
 	/**
-	 * qiang yu entity,每个列表item内容
+	 * 每个列表item内容
 	 * 2014/4/27
 	 */
 	private static final long serialVersionUID = -6280656428527540320L;

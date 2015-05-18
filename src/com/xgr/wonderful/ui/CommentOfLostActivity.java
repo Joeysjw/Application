@@ -48,7 +48,7 @@ import com.xgr.wonderful.adapter.LostGridViewAdapter;
 import com.xgr.wonderful.db.DatabaseUtil;
 import com.xgr.wonderful.entity.Comment;
 import com.xgr.wonderful.entity.CommentForLost;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.sns.TencentShare;
 import com.xgr.wonderful.sns.TencentShareEntity;

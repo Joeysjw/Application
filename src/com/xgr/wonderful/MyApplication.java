@@ -19,7 +19,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.entity.User;
 import com.xgr.wonderful.utils.ActivityManagerUtils;
 
@@ -29,7 +29,7 @@ public class MyApplication extends Application{
 	
 	private static MyApplication myApplication = null;
 	
-	private QiangYu currentQiangYu = null;
+	private MainPageItem currentQiangYu = null;
 	private Lost currentLost ;
 	
 	private HttpClient httpClient;
@@ -56,11 +56,11 @@ public class MyApplication extends Application{
 
 	
 	
-	public QiangYu getCurrentQiangYu() {
+	public MainPageItem getCurrentQiangYu() {
 		return currentQiangYu;
 	}
 
-	public void setCurrentQiangYu(QiangYu currentQiangYu) {
+	public void setCurrentQiangYu(MainPageItem currentQiangYu) {
 		this.currentQiangYu = currentQiangYu;
 	}
 	

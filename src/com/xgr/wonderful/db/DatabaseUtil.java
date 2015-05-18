@@ -10,7 +10,7 @@ import android.database.Cursor;
 
 import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.db.DBHelper.FavTable;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.utils.LogUtils;
 
 
@@ -59,7 +59,7 @@ public class DatabaseUtil {
 	    }
 	    
 	    
-	    public void deleteFav(QiangYu qy){
+	    public void deleteFav(MainPageItem qy){
 	    	Cursor cursor=null;
 	    	String where = FavTable.USER_ID+" = '"+MyApplication.getInstance().getCurrentUser().getObjectId()
 	    			+"' AND "+FavTable.OBJECT_ID+" = '"+qy.getObjectId()+"'";
@@ -82,7 +82,7 @@ public class DatabaseUtil {
 	    }
 	    
 	    
-	    public boolean isLoved(QiangYu qy){
+	    public boolean isLoved(MainPageItem qy){
 	    	Cursor cursor = null;
 	    	String where = FavTable.USER_ID+" = '"+MyApplication.getInstance().getCurrentUser().getObjectId()
 	    			+"' AND "+FavTable.OBJECT_ID+" = '"+qy.getObjectId()+"'";
@@ -96,7 +96,7 @@ public class DatabaseUtil {
 	    	return false;
 	    }
 	    
-	    public long insertFav(QiangYu qy){
+	    public long insertFav(MainPageItem qy){
 	    	long uri = 0;
 	    	Cursor cursor=null;
 	    	String where = FavTable.USER_ID+" = '"+MyApplication.getInstance().getCurrentUser().getObjectId()
@@ -137,11 +137,11 @@ public class DatabaseUtil {
 	     * @param context
 	     * @param lists
 	     */
-	    public List<QiangYu> setFav(List<QiangYu> lists) {
+	    public List<MainPageItem> setFav(List<MainPageItem> lists) {
 	        Cursor cursor=null;
 	        if(lists != null && lists.size() > 0) {
 	            for(Iterator iterator=lists.iterator(); iterator.hasNext();) {
-	            	QiangYu content=(QiangYu)iterator.next();
+	            	MainPageItem content=(MainPageItem)iterator.next();
 	            	String where = FavTable.USER_ID+" = '"+MyApplication.getInstance().getCurrentUser().getObjectId()//content.getAuthor().getObjectId()
 	    	    			+"' AND "+FavTable.OBJECT_ID+" = '"+content.getObjectId()+"'";
 	                cursor=dbHelper.query(DBHelper.TABLE_NAME, null, where, null, null, null, null);
@@ -173,11 +173,11 @@ public class DatabaseUtil {
 	     * @param context
 	     * @param lists
 	     */
-	    public List<QiangYu> setFavInFav(List<QiangYu> lists) {
+	    public List<MainPageItem> setFavInFav(List<MainPageItem> lists) {
 	        Cursor cursor=null;
 	        if(lists != null && lists.size() > 0) {
 	            for(Iterator iterator=lists.iterator(); iterator.hasNext();) {
-	            	QiangYu content=(QiangYu)iterator.next();
+	            	MainPageItem content=(MainPageItem)iterator.next();
 	            	content.setMyFav(true);
 	            	String where = FavTable.USER_ID+" = '"+MyApplication.getInstance().getCurrentUser().getObjectId()
 	    	    			+"' AND "+FavTable.OBJECT_ID+" = '"+content.getObjectId()+"'";
@@ -201,17 +201,17 @@ public class DatabaseUtil {
 	    }
 	    
 	    
-	    public ArrayList<QiangYu> queryFav() {
-	        ArrayList<QiangYu> contents=null;
+	    public ArrayList<MainPageItem> queryFav() {
+	        ArrayList<MainPageItem> contents=null;
 	        // ContentResolver resolver = context.getContentResolver();
 	        Cursor cursor=dbHelper.query(DBHelper.TABLE_NAME, null, null, null, null, null, null);
 	        LogUtils.i(TAG, cursor.getCount() + "");
 	        if(cursor == null) {
 	            return null;
 	        }
-	        contents=new ArrayList<QiangYu>();
+	        contents=new ArrayList<MainPageItem>();
 	        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-	        	QiangYu content=new QiangYu();
+	        	MainPageItem content=new MainPageItem();
 	        	content.setMyFav(cursor.getInt(3)==1?true:false);
 	        	content.setMyLove(cursor.getInt(4)==1?true:false);
 	            LogUtils.i(TAG,cursor.getColumnIndex("isfav")+".."+cursor.getColumnIndex("islove")+".."+content.getMyFav()+"..."+content.getMyLove());

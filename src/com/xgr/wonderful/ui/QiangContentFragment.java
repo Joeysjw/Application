@@ -33,7 +33,7 @@ import com.xgr.wonderful.R;
 import com.xgr.wonderful.MyApplication;
 import com.xgr.wonderful.adapter.AIContentAdapter;
 import com.xgr.wonderful.db.DatabaseUtil;
-import com.xgr.wonderful.entity.QiangYu;
+import com.xgr.wonderful.entity.MainPageItem;
 import com.xgr.wonderful.ui.base.BaseFragment;
 import com.xgr.wonderful.utils.ActivityUtil;
 import com.xgr.wonderful.utils.Constant;
@@ -52,7 +52,7 @@ public class QiangContentFragment extends BaseFragment{
 	private int pageNum;
 	private String lastItemTime;//当前列表结尾的条目的创建时间，
 	
-	private ArrayList<QiangYu> mListItems;
+	private ArrayList<MainPageItem> mListItems;
 	private PullToRefreshListView mPullRefreshListView;
 	private AIContentAdapter mAdapter;
 	private ListView actualListView;
@@ -139,7 +139,7 @@ public class QiangContentFragment extends BaseFragment{
 		});
 		
 		actualListView = mPullRefreshListView.getRefreshableView();
-		mListItems = new ArrayList<QiangYu>();
+		mListItems = new ArrayList<MainPageItem>();
 		mAdapter = new AIContentAdapter(mContext, mListItems);
 		actualListView.setAdapter(mAdapter);
 		if(mListItems.size() == 0){
@@ -164,7 +164,7 @@ public class QiangContentFragment extends BaseFragment{
 	
 	public void fetchData(){
 		setState(LOADING);
-		BmobQuery<QiangYu> query = new BmobQuery<QiangYu>();
+		BmobQuery<MainPageItem> query = new BmobQuery<MainPageItem>();
 		query.order("-createdAt");
 //		query.setCachePolicy(CachePolicy.NETWORK_ONLY);
 		query.setLimit(Constant.NUMBERS_PER_PAGE);
@@ -174,10 +174,10 @@ public class QiangContentFragment extends BaseFragment{
 		query.setSkip(Constant.NUMBERS_PER_PAGE*(pageNum++));
 		LogUtils.i(TAG,"SIZE:"+Constant.NUMBERS_PER_PAGE*pageNum);
 		query.include("author");
-		query.findObjects(getActivity(), new FindListener<QiangYu>() {
+		query.findObjects(getActivity(), new FindListener<MainPageItem>() {
 			
 			@Override
-			public void onSuccess(List<QiangYu> list) {
+			public void onSuccess(List<MainPageItem> list) {
 				// TODO Auto-generated method stub
 				LogUtils.i(TAG,"find success."+list.size());
 				if(list.size()!=0&&list.get(list.size()-1)!=null){

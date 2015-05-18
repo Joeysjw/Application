@@ -33,6 +33,7 @@ import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UploadFileListener;
 import cn.bmob.v3.update.BmobUpdateAgent;
 
+import com.bmob.BmobProFile;
 import com.cumtLife.Const.MyConst;
 import com.cumtLife.bean.Lost;
 import com.xgr.wonderful.R;
@@ -288,6 +289,13 @@ public class AddFindLostActivity extends BaseActivity implements OnClickListener
 	ArrayList<BmobFile> compressedPicList = new ArrayList<BmobFile>();
 	
 	private PicForLost upLoadFile(File file){
+		
+//		BmobProFile.getInstance(this).uploadBatch(filePaths, listener)
+		
+		
+		
+		
+		
 		final BmobFile bmobFile = new BmobFile(file);
 		bmobFile.upload(this, new UploadFileListener() {
 			
