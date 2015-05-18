@@ -1,6 +1,6 @@
 package fr.castorflex.android.smoothprogressbar;
 
-import com.xgr.wonderful.R;
+import com.cumtlife.application.R;
 
 import android.content.Context;
 import android.content.res.Resources;

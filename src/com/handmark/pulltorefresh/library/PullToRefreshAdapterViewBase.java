@@ -34,7 +34,7 @@ import android.widget.ListAdapter;
 
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
 import com.handmark.pulltorefresh.library.internal.IndicatorLayout;
-import com.xgr.wonderful.R;
+import com.cumtlife.application.R;
 
 public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extends PullToRefreshBase<T> implements
 		OnScrollListener {

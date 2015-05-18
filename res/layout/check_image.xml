@@ -20,7 +20,7 @@
         android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-        <com.xgr.wonderful.view.DetailGallery
+        <com.cumtlife.view.DetailGallery
             android:id="@+id/gallery_viewImage"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

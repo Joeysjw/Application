@@ -2,8 +2,8 @@ package com.cumtLife.bean;
 
 import java.util.Date;
 
-import com.xgr.wonderful.entity.PicForLost;
-import com.xgr.wonderful.entity.User;
+import com.cumtlife.entity.PicForLost;
+import com.cumtlife.entity.User;
 
 import cn.bmob.v3.BmobObject;
 import cn.bmob.v3.datatype.BmobFile;

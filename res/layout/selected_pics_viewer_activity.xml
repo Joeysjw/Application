@@ -54,7 +54,7 @@
         android:layout_height="fill_parent"
         android:layout_above="@id/bottom_relativelayout" >
 
-        <com.xgr.wonderful.view.DetailGallery
+        <com.cumtlife.view.DetailGallery
             android:id="@+id/show_img"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"

@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.GridView;
 
 import com.handmark.pulltorefresh.library.internal.EmptyViewMethodAccessor;
-import com.xgr.wonderful.R;
+import com.cumtlife.application.R;
 public class PullToRefreshGridView extends PullToRefreshAdapterViewBase<GridView> {
 
 	public PullToRefreshGridView(Context context) {

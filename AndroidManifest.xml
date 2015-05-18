@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xgr.wonderful"
+    package="com.cumtlife.application"
     android:versionCode="3"
     android:versionName="1.0" >
 
@@ -26,13 +26,13 @@
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
     <application
-        android:name="com.xgr.wonderful.MyApplication"
+        android:name="com.cumtlife.application.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.xgr.wonderful.ui.SplashActivity"
+            android:name="com.cumtlife.activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
             <intent-filter>
@@ -41,89 +41,89 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.MainActivity"
+            android:name="com.cumtlife.activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.RegisterAndLoginActivity"
+            android:name="com.cumtlife.activity.RegisterAndLoginActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.EditActivity"
+            android:name="com.cumtlife.activity.EditActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.CommentActivity"
+            android:name="com.cumtlife.activity.CommentActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.FavActivity"
+            android:name="com.cumtlife.activity.FavActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.PersonalActivity"
+            android:name="com.cumtlife.activity.PersonalActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.PersonalEditActivity"
+            android:name="com.cumtlife.activity.PersonalEditActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.SettingsActivity"
+            android:name="com.cumtlife.activity.SettingsActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.bmob.lostfound.FindLostThingsActivity"
+            android:name="com.cumtlife.lostfound.FindLostThingsActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.bmob.lostfound.AddFindLostActivity"
+            android:name="com.cumtlife.lostfound.AddFindLostActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.AlbumActivity"
+            android:name="com.cumtlife.activity.AlbumActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.SelectedPicsViewerActivity"
+            android:name="com.cumtlife.activity.SelectedPicsViewerActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.PhotoViewerActivity"
+            android:name="com.cumtlife.activity.PhotoViewerActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.CheckImageActivity"
+            android:name="com.cumtlife.activity.CheckImageActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.CommentOfLostActivity"
+            android:name="com.cumtlife.activity.CommentOfLostActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.AboutActivity"
+            android:name="com.cumtlife.activity.AboutActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.xgr.wonderful.ui.EditSignActivity"
+            android:name="com.cumtlife.activity.EditSignActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
